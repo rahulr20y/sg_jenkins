@@ -22,4 +22,9 @@ public class DemoController {
     {
         return ResponseEntity.ok("Hello From helloController Listing on Port: "+environment.getProperty("local.server.port"));
     }
+    @GetMapping("/hello")
+    public ResponseEntity<?> sayHello(@RequestParam("message") String message)
+    {
+        return ResponseEntity.ok("hello "+message);
+    }
 }
